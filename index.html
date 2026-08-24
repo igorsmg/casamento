@@ -280,19 +280,30 @@
       transform: scale(1);
     }
 
+    .slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(circle at center, rgba(212, 154, 141, .18), transparent 55%),
+        #f7eee3;
+    }
+
     .slide img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      object-position: center;
     }
 
     .carousel-card::after {
       content: "";
       position: absolute;
       inset: auto 0 0;
-      height: 48%;
-      background: linear-gradient(to top, rgba(45, 38, 34, .58), transparent);
+      height: 34%;
+      background: linear-gradient(to top, rgba(45, 38, 34, .48), transparent);
       z-index: 2;
+      pointer-events: none;
     }
 
     .photo-caption {
@@ -645,6 +656,13 @@
       line-height: 1;
     }
 
+
+    .music-player{position:fixed;right:22px;bottom:22px;z-index:30;width:min(360px,calc(100vw - 32px));padding:16px 18px;border:1px solid rgba(122,62,62,.14);border-radius:22px;background:rgba(255,253,248,.92);box-shadow:0 18px 55px rgba(73,47,34,.18);backdrop-filter:blur(18px)}
+    .music-top{display:flex;align-items:center;gap:12px}.music-disc{width:42px;height:42px;flex:0 0 42px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(135deg,var(--wine),var(--rose));color:#fffaf4;font-size:1.05rem;box-shadow:0 8px 20px rgba(122,62,62,.22)}
+    .music-info{min-width:0;flex:1}.music-info small{display:block;margin-bottom:2px;color:var(--sage);font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.music-info strong{display:block;overflow:hidden;color:var(--wine);font-family:"Cormorant Garamond",Georgia,serif;font-size:1.15rem;line-height:1.1;text-overflow:ellipsis;white-space:nowrap}
+    .music-controls{display:flex;align-items:center;gap:7px}.music-btn{width:36px;height:36px;border:1px solid rgba(122,62,62,.16);border-radius:50%;background:rgba(122,62,62,.06);color:var(--wine);cursor:pointer;font-weight:800}.music-btn.main{background:var(--wine);color:#fffaf4}.music-progress{width:100%;height:4px;margin-top:12px;accent-color:var(--wine);cursor:pointer}.music-hint{margin:7px 0 0;color:var(--muted);font-size:.7rem;line-height:1.35}
+    @media(max-width:680px){.music-player{right:10px;bottom:10px;width:calc(100vw - 20px)}}
+
     @media (max-width: 980px) {
       .hero,
       .story-card,
@@ -715,6 +733,22 @@
     <a href="#presentes">Presentes</a>
     <a href="#data">Data</a>
   </nav>
+
+
+  <div class="music-player" aria-label="Trilha sonora do casamento">
+    <div class="music-top">
+      <div class="music-disc" id="musicDisc">♪</div>
+      <div class="music-info"><small>Nossa trilha sonora</small><strong id="musicTitle">Canção do nosso casamento</strong></div>
+      <div class="music-controls">
+        <button class="music-btn" id="musicPrev" type="button" aria-label="Música anterior">‹</button>
+        <button class="music-btn main" id="musicToggle" type="button" aria-label="Tocar música">▶</button>
+        <button class="music-btn" id="musicNext" type="button" aria-label="Próxima música">›</button>
+      </div>
+    </div>
+    <input class="music-progress" id="musicProgress" type="range" min="0" max="100" value="0" aria-label="Progresso da música">
+    <p class="music-hint" id="musicHint">A música tenta começar automaticamente. Se o navegador bloquear o som, toque em ▶ uma vez.</p>
+    <audio id="weddingAudio" preload="auto"></audio>
+  </div>
 
   <main id="inicio" class="hero">
     <div>
@@ -1049,43 +1083,28 @@
   </footer>
 
   <script>
-    const slides = [...document.querySelectorAll(".slide")];
-    const dotsWrapper = document.querySelector("#dots");
-    let currentSlide = 0;
-    let intervalId;
+    const slides=[...document.querySelectorAll(".slide")],dotsWrapper=document.querySelector("#dots");
+    let currentSlide=0,intervalId;
+    function showSlide(index){currentSlide=(index+slides.length)%slides.length;slides.forEach((s,i)=>s.classList.toggle("active",i===currentSlide));[...dotsWrapper.children].forEach((d,i)=>{d.classList.toggle("active",i===currentSlide);d.setAttribute("aria-pressed",i===currentSlide);});}
+    function startCarousel(){clearInterval(intervalId);intervalId=setInterval(()=>showSlide(currentSlide+1),4200);}
+    slides.forEach((_,index)=>{const dot=document.createElement("button");dot.className=`dot${index===0?" active":""}`;dot.type="button";dot.setAttribute("aria-label",`Mostrar foto ${index+1}`);dot.setAttribute("aria-pressed",index===0);dot.addEventListener("click",()=>{showSlide(index);startCarousel();});dotsWrapper.appendChild(dot);});startCarousel();
 
-    function showSlide(index) {
-      currentSlide = (index + slides.length) % slides.length;
-
-      slides.forEach((slide, slideIndex) => {
-        slide.classList.toggle("active", slideIndex === currentSlide);
-      });
-
-      [...dotsWrapper.children].forEach((dot, dotIndex) => {
-        dot.classList.toggle("active", dotIndex === currentSlide);
-        dot.setAttribute("aria-pressed", dotIndex === currentSlide);
-      });
-    }
-
-    function startCarousel() {
-      clearInterval(intervalId);
-      intervalId = setInterval(() => showSlide(currentSlide + 1), 4200);
-    }
-
-    slides.forEach((_, index) => {
-      const dot = document.createElement("button");
-      dot.className = `dot${index === 0 ? " active" : ""}`;
-      dot.type = "button";
-      dot.setAttribute("aria-label", `Mostrar foto ${index + 1}`);
-      dot.setAttribute("aria-pressed", index === 0);
-      dot.addEventListener("click", () => {
-        showSlide(index);
-        startCarousel();
-      });
-      dotsWrapper.appendChild(dot);
-    });
-
-    startCarousel();
+    /* Playlist: coloque os MP3 na pasta audio/ com estes nomes. */
+    const playlist=[
+      {title:"Perfect — Ed Sheeran",file:"audio/perfect.mp3"},
+      {title:"A Thousand Years — Christina Perri",file:"audio/a-thousand-years.mp3"},
+      {title:"All of Me — John Legend",file:"audio/all-of-me.mp3"},
+      {title:"Can't Help Falling in Love — Elvis Presley",file:"audio/cant-help-falling-in-love.mp3"},
+      {title:"At Last — Etta James",file:"audio/at-last.mp3"}
+    ];
+    const audio=document.querySelector("#weddingAudio"),titleEl=document.querySelector("#musicTitle"),toggle=document.querySelector("#musicToggle"),prev=document.querySelector("#musicPrev"),next=document.querySelector("#musicNext"),progress=document.querySelector("#musicProgress"),hint=document.querySelector("#musicHint"),disc=document.querySelector("#musicDisc");
+    let track=0;
+    function loadTrack(i,autoplay=false){track=(i+playlist.length)%playlist.length;audio.src=playlist[track].file;audio.load();titleEl.textContent=playlist[track].title;progress.value=0;if(autoplay)playMusic();}
+    async function playMusic(){try{await audio.play();toggle.textContent="Ⅱ";toggle.setAttribute("aria-label","Pausar música");disc.style.animation="spin 5s linear infinite";hint.textContent="Trilha sonora do casamento • tocando";}catch(e){toggle.textContent="▶";toggle.setAttribute("aria-label","Tocar música");hint.textContent="O navegador bloqueou o autoplay. Toque em ▶ para começar a trilha.";}}
+    function pauseMusic(){audio.pause();toggle.textContent="▶";toggle.setAttribute("aria-label","Tocar música");disc.style.animation="none";}
+    toggle.addEventListener("click",()=>audio.paused?playMusic():pauseMusic());next.addEventListener("click",()=>loadTrack(track+1,true));prev.addEventListener("click",()=>audio.currentTime>5?audio.currentTime=0:loadTrack(track-1,true));audio.addEventListener("ended",()=>loadTrack(track+1,true));audio.addEventListener("timeupdate",()=>{if(audio.duration)progress.value=audio.currentTime/audio.duration*100;});progress.addEventListener("input",()=>{if(audio.duration)audio.currentTime=progress.value/100*audio.duration;});
+    const musicStyle=document.createElement("style");musicStyle.textContent="@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}";document.head.appendChild(musicStyle);
+    loadTrack(0,true);
   </script>
 </body>
 </html>
