@@ -29,19 +29,8 @@ const musicHint = document.getElementById('musicHint');
 // Inicializar com a primeira música
 function initPlayer() {
   loadTrack(currentTrackIndex);
-  
-  // Tentar autoplay com som mutado (permitido pela maioria dos navegadores)
-  audio.muted = true;
-  audio.play().then(() => {
-    audio.muted = false;
-    isPlaying = true;
-    updatePlayButton();
-    musicHint.textContent = "Música tocando... 🎵";
-  }).catch(() => {
-    // Se o autoplay falhar, mantém unmuted e pede para usuário clicar
-    isPlaying = false;
-    updatePlayButton();
-  });
+  updatePlayButton();
+  musicHint.textContent = "Clique em ▶ para começar a música";
 }
 
 function loadTrack(index) {
@@ -113,18 +102,6 @@ musicProgress.addEventListener('change', (e) => {
 
 // Próxima música quando acabar
 audio.addEventListener('ended', nextTrack);
-
-// Capturar interações do usuário para ativar autoplay
-document.addEventListener('click', () => {
-  if (!isPlaying && audio.paused) {
-    isPlaying = true;
-    audio.play().catch(err => {
-      console.log('Autoplay após interação falhou:', err);
-      isPlaying = false;
-    });
-    updatePlayButton();
-  }
-}, { once: true });
 
 // Inicializar quando o DOM estiver pronto
 if (document.readyState === 'loading') {
