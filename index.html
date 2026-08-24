@@ -656,12 +656,120 @@
       line-height: 1;
     }
 
+    .music-player {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 30;
+      width: min(360px, calc(100vw - 32px));
+      padding: 16px 18px;
+      border: 1px solid rgba(122, 62, 62, .14);
+      border-radius: 22px;
+      background: rgba(255, 253, 248, .95);
+      box-shadow: 0 18px 54px rgba(73, 47, 34, .16);
+      backdrop-filter: blur(14px);
+    }
 
-    .music-player{position:fixed;right:22px;bottom:22px;z-index:30;width:min(360px,calc(100vw - 32px));padding:16px 18px;border:1px solid rgba(122,62,62,.14);border-radius:22px;background:rgba(255,253,248,.92);box-shadow:0 18px 55px rgba(73,47,34,.18);backdrop-filter:blur(18px)}
-    .music-top{display:flex;align-items:center;gap:12px}.music-disc{width:42px;height:42px;flex:0 0 42px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(135deg,var(--wine),var(--rose));color:#fffaf4;font-size:1.05rem;box-shadow:0 8px 20px rgba(122,62,62,.22)}
-    .music-info{min-width:0;flex:1}.music-info small{display:block;margin-bottom:2px;color:var(--sage);font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.music-info strong{display:block;overflow:hidden;color:var(--wine);font-family:"Cormorant Garamond",Georgia,serif;font-size:1.15rem;line-height:1.1;text-overflow:ellipsis;white-space:nowrap}
-    .music-controls{display:flex;align-items:center;gap:7px}.music-btn{width:36px;height:36px;border:1px solid rgba(122,62,62,.16);border-radius:50%;background:rgba(122,62,62,.06);color:var(--wine);cursor:pointer;font-weight:800}.music-btn.main{background:var(--wine);color:#fffaf4}.music-progress{width:100%;height:4px;margin-top:12px;accent-color:var(--wine);cursor:pointer}.music-hint{margin:7px 0 0;color:var(--muted);font-size:.7rem;line-height:1.35}
-    @media(max-width:680px){.music-player{right:10px;bottom:10px;width:calc(100vw - 20px)}}
+    .music-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .music-disc {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--wine), var(--rose));
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    .music-info {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .music-info small {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--sage);
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .music-info strong {
+      display: block;
+      color: var(--wine);
+      font-size: .95rem;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .music-controls {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .music-btn {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(122, 62, 62, .16);
+      border-radius: 50%;
+      background: rgba(122, 62, 62, .06);
+      color: var(--wine);
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: .2s ease;
+    }
+
+    .music-btn:hover {
+      background: rgba(122, 62, 62, .12);
+      transform: scale(1.05);
+    }
+
+    .music-btn.main {
+      background: var(--wine);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(122, 62, 62, .24);
+    }
+
+    .music-btn.main:hover {
+      transform: scale(1.08);
+      box-shadow: 0 12px 28px rgba(122, 62, 62, .32);
+    }
+
+    .music-progress {
+      width: 100%;
+      margin-top: 12px;
+      cursor: pointer;
+      accent-color: var(--wine);
+    }
+
+    .music-hint {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: .75rem;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 680px) {
+      .music-player {
+        right: 10px;
+        bottom: 10px;
+        width: calc(100vw - 20px);
+      }
+    }
 
     @media (max-width: 980px) {
       .hero,
@@ -734,7 +842,6 @@
     <a href="#data">Data</a>
   </nav>
 
-
   <div class="music-player" aria-label="Trilha sonora do casamento">
     <div class="music-top">
       <div class="music-disc" id="musicDisc">♪</div>
@@ -806,7 +913,7 @@
         <p class="eyebrow">Nossa história</p>
         <h2>O encontro que virou destino</h2>
       </div>
-      <p>Antes de existir “nós”, existiam dois sonhos parecidos: crescer, aprender e construir um futuro com mais propósito. Foi assim que a vida começou a aproximar Mariana e Igor.</p>
+      <p>Antes de existir "nós", existiam dois sonhos parecidos: crescer, aprender e construir um futuro com mais propósito. Foi assim que a vida começou a aproximar Mariana e Igor.</p>
     </div>
 
     <article class="story-card">
@@ -814,10 +921,10 @@
         <img src="https://raw.githubusercontent.com/igorsmg/casamento/main/WhatsApp Image 2026-08-23 at 21.43.20.jpeg" alt="Mariana e Igor em destaque">
       </div>
       <div class="story-copy">
-        <p>Mariana procurava um curso para mergulhar mais fundo no universo dos dados. Igor buscava o mesmo impulso: dar um novo passo na carreira e abrir caminho para oportunidades maiores. Sem saber, os dois estavam seguindo trilhas diferentes para chegar ao mesmo lugar.</p>
-        <p>O destino marcou esse encontro em um MBA. No início, eram apenas nomes em uma turma, mensagens compartilhadas, dúvidas, prazos e aprendizados. Até que, em um dia comum, Igor entrou no grupo dos alunos para ajudar colegas e organizar os temas das aulas. Entre tantas conversas, um detalhe chamou sua atenção: um número com DDD 019. Era Mariana.</p>
-        <p>A curiosidade virou conversa. A conversa virou afinidade. E a afinidade, pouco a pouco, encontrou espaço para se transformar em cuidado, parceria e vontade de estar perto. Vieram os primeiros encontros, as viagens, as famílias se conhecendo e a certeza silenciosa de que aquilo era mais do que coincidência.</p>
-        <p>Hoje, Mariana e Igor celebram a escolha de caminhar juntos. No dia 24 de outubro de 2026, essa história ganha um novo capítulo, cercada pelas pessoas que fizeram parte da jornada e que agora testemunham o começo de uma vida inteira.</p>
+        <p>Mariana procurava um curso para mergulhar mais fundo no universo dos dados. Igor buscava o mesmo impulso: dar um novo passo na carreira e abrir caminho para oportunidades maiores. Sem saber...</p>
+        <p>O destino marcou esse encontro em um MBA. No início, eram apenas nomes em uma turma, mensagens compartilhadas, dúvidas, prazos e aprendizados. Até que, em um dia comum, Igor entrou...</p>
+        <p>A curiosidade virou conversa. A conversa virou afinidade. E a afinidade, pouco a pouco, encontrou espaço para se transformar em cuidado, parceria e vontade de estar perto. Vieram os primeiros...</p>
+        <p>Hoje, Mariana e Igor celebram a escolha de caminhar juntos. No dia 24 de outubro de 2026, essa história ganha um novo capítulo, cercada pelas pessoas que fizeram parte da jornada e que agora...</p>
 
         <div class="timeline" aria-label="Linha do tempo do casal">
           <div><strong>MBA</strong><span>Onde tudo começou</span></div>
@@ -996,115 +1103,14 @@
         <div class="price"><strong>R$ 1.990</strong></div>
         <a class="gift-link" href="https://nubank.com.br/cobrar/auhc/6a81bbd0-22c4-49db-a559-b849fe3e29f3" target="_blank" rel="noopener">Presentear via PIX</a>
       </article>
-
-      <article class="gift-card">
-        <small>Combo Dia 6</small>
-        <h3>Marais, Notre-Dame e Arco</h3>
-        <p>Um roteiro por bairros históricos, mirantes e ruas cheias de vida.</p>
-        <ul>
-          <li>Transporte público ilimitado no dia</li>
-          <li>Arco do Triunfo e Panthéon</li>
-          <li>Refeições, patisseries e pequenas compras</li>
-        </ul>
-        <div class="price"><strong>R$ 2.120</strong></div>
-        <a class="gift-link" href="https://nubank.com.br/cobrar/auhc/6a81bbd0-22c4-49db-a559-b849fe3e29f3" target="_blank" rel="noopener">Presentear via PIX</a>
-      </article>
-
-      <article class="gift-card">
-        <small>Combo Dia 5</small>
-        <h3>Orsay, Orangerie e Quartier Latin</h3>
-        <p>Impressionismo, caminhadas charmosas e um jantar aconchegante.</p>
-        <ul>
-          <li>Metrô para todos os deslocamentos</li>
-          <li>Musée d'Orsay, Orangerie e Sainte-Chapelle</li>
-          <li>Almoço, jantar e lembranças culturais</li>
-        </ul>
-        <div class="price"><strong>R$ 2.220</strong></div>
-        <a class="gift-link" href="https://nubank.com.br/cobrar/auhc/6a81bbd0-22c4-49db-a559-b849fe3e29f3" target="_blank" rel="noopener">Presentear via PIX</a>
-      </article>
-
-      <article class="gift-card">
-        <small>Combo Dia 4</small>
-        <h3>Versalhes completo</h3>
-        <p>Um mergulho nos jardins, salões e detalhes históricos do palácio.</p>
-        <ul>
-          <li>RER até Versalhes com passe diário</li>
-          <li>Passaporte completo para o casal</li>
-          <li>Refeições, água, café e lembrancinhas</li>
-        </ul>
-        <div class="price"><strong>R$ 2.220</strong></div>
-        <a class="gift-link" href="https://nubank.com.br/cobrar/auhc/6a81bbd0-22c4-49db-a559-b849fe3e29f3" target="_blank" rel="noopener">Presentear via PIX</a>
-      </article>
-
-      <article class="gift-card">
-        <small>Combo Dia 3</small>
-        <h3>Torre Eiffel e cruzeiro no Sena</h3>
-        <p>O dia mais clássico da lua de mel, com Paris vista do alto e pelo rio.</p>
-        <ul>
-          <li>Transporte urbano do casal</li>
-          <li>Torre Eiffel até o topo e passeio de barco</li>
-          <li>Jantar especial e souvenirs</li>
-        </ul>
-        <div class="price"><strong>R$ 2.540</strong></div>
-        <a class="gift-link" href="https://nubank.com.br/cobrar/auhc/6a81bbd0-22c4-49db-a559-b849fe3e29f3" target="_blank" rel="noopener">Presentear via PIX</a>
-      </article>
-
-      <article class="gift-card">
-        <small>Combo Dia 8</small>
-        <h3>Despedida romântica</h3>
-        <p>Último dia com jardins, Ópera, passeio subterrâneo e um jantar memorável.</p>
-        <ul>
-          <li>Metrô para todos os trechos</li>
-          <li>Opéra Garnier e Catacumbas de Paris</li>
-          <li>Jantar final, cafés e lembrancinhas</li>
-        </ul>
-        <div class="price"><strong>R$ 3.070</strong></div>
-        <a class="gift-link" href="https://nubank.com.br/cobrar/auhc/6a81bbd0-22c4-49db-a559-b849fe3e29f3" target="_blank" rel="noopener">Presentear via PIX</a>
-      </article>
-
-      <article class="gift-card">
-        <small>Combo Dia 7</small>
-        <h3>Disneyland Paris</h3>
-        <p>Um dia inteiro de diversão, filas, shows, refeições e lembranças especiais.</p>
-        <ul>
-          <li>RER até Marne-la-Vallée incluso no passe</li>
-          <li>Ingressos 1 dia / 2 parques em cenário pessimista</li>
-          <li>Alimentação dentro do parque e souvenirs</li>
-        </ul>
-        <div class="price"><strong>R$ 4.360</strong></div>
-        <a class="gift-link" href="https://nubank.com.br/cobrar/auhc/6a81bbd0-22c4-49db-a559-b849fe3e29f3" target="_blank" rel="noopener">Presentear via PIX</a>
-      </article>
     </div>
   </section>
 
   <footer class="footer">
-    <strong>Esperamos vocês para celebrar conosco.</strong>
-    <p>Mariana & Igor • 24 de outubro de 2026</p>
+    <strong>Mariana & Igor</strong>
+    <p>24 de outubro de 2026 | Campinas, SP</p>
   </footer>
 
-  <script>
-    const slides=[...document.querySelectorAll(".slide")],dotsWrapper=document.querySelector("#dots");
-    let currentSlide=0,intervalId;
-    function showSlide(index){currentSlide=(index+slides.length)%slides.length;slides.forEach((s,i)=>s.classList.toggle("active",i===currentSlide));[...dotsWrapper.children].forEach((d,i)=>{d.classList.toggle("active",i===currentSlide);d.setAttribute("aria-pressed",i===currentSlide);});}
-    function startCarousel(){clearInterval(intervalId);intervalId=setInterval(()=>showSlide(currentSlide+1),4200);}
-    slides.forEach((_,index)=>{const dot=document.createElement("button");dot.className=`dot${index===0?" active":""}`;dot.type="button";dot.setAttribute("aria-label",`Mostrar foto ${index+1}`);dot.setAttribute("aria-pressed",index===0);dot.addEventListener("click",()=>{showSlide(index);startCarousel();});dotsWrapper.appendChild(dot);});startCarousel();
-
-    /* Playlist: coloque os MP3 na pasta audio/ com estes nomes. */
-    const playlist=[
-      {title:"Perfect — Ed Sheeran",file:"audio/perfect.mp3"},
-      {title:"A Thousand Years — Christina Perri",file:"audio/a-thousand-years.mp3"},
-      {title:"All of Me — John Legend",file:"audio/all-of-me.mp3"},
-      {title:"Can't Help Falling in Love — Elvis Presley",file:"audio/cant-help-falling-in-love.mp3"},
-      {title:"At Last — Etta James",file:"audio/at-last.mp3"}
-    ];
-    const audio=document.querySelector("#weddingAudio"),titleEl=document.querySelector("#musicTitle"),toggle=document.querySelector("#musicToggle"),prev=document.querySelector("#musicPrev"),next=document.querySelector("#musicNext"),progress=document.querySelector("#musicProgress"),hint=document.querySelector("#musicHint"),disc=document.querySelector("#musicDisc");
-    let track=0;
-    function loadTrack(i,autoplay=false){track=(i+playlist.length)%playlist.length;audio.src=playlist[track].file;audio.load();titleEl.textContent=playlist[track].title;progress.value=0;if(autoplay)playMusic();}
-    async function playMusic(){try{await audio.play();toggle.textContent="Ⅱ";toggle.setAttribute("aria-label","Pausar música");disc.style.animation="spin 5s linear infinite";hint.textContent="Trilha sonora do casamento • tocando";}catch(e){toggle.textContent="▶";toggle.setAttribute("aria-label","Tocar música");hint.textContent="O navegador bloqueou o autoplay. Toque em ▶ para começar a trilha.";}}
-    function pauseMusic(){audio.pause();toggle.textContent="▶";toggle.setAttribute("aria-label","Tocar música");disc.style.animation="none";}
-    toggle.addEventListener("click",()=>audio.paused?playMusic():pauseMusic());next.addEventListener("click",()=>loadTrack(track+1,true));prev.addEventListener("click",()=>audio.currentTime>5?audio.currentTime=0:loadTrack(track-1,true));audio.addEventListener("ended",()=>loadTrack(track+1,true));audio.addEventListener("timeupdate",()=>{if(audio.duration)progress.value=audio.currentTime/audio.duration*100;});progress.addEventListener("input",()=>{if(audio.duration)audio.currentTime=progress.value/100*audio.duration;});
-    const musicStyle=document.createElement("style");musicStyle.textContent="@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}";document.head.appendChild(musicStyle);
-    loadTrack(0,true);
-  </script>
+  <script src="https://raw.githubusercontent.com/igorsmg/casamento/main/music-player.js"></script>
 </body>
 </html>
