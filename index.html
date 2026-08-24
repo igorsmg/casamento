@@ -656,121 +656,6 @@
       line-height: 1;
     }
 
-    .music-player {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      z-index: 30;
-      width: min(360px, calc(100vw - 32px));
-      padding: 16px 18px;
-      border: 1px solid rgba(122, 62, 62, .14);
-      border-radius: 22px;
-      background: rgba(255, 253, 248, .95);
-      box-shadow: 0 18px 54px rgba(73, 47, 34, .16);
-      backdrop-filter: blur(14px);
-    }
-
-    .music-top {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .music-disc {
-      width: 42px;
-      height: 42px;
-      flex: 0 0 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--wine), var(--rose));
-      color: #fff;
-      font-size: 1.4rem;
-      font-weight: bold;
-    }
-
-    .music-info {
-      min-width: 0;
-      flex: 1;
-    }
-
-    .music-info small {
-      display: block;
-      margin-bottom: 2px;
-      color: var(--sage);
-      font-size: .68rem;
-      font-weight: 800;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .music-info strong {
-      display: block;
-      color: var(--wine);
-      font-size: .95rem;
-      font-weight: 700;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .music-controls {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-    }
-
-    .music-btn {
-      width: 36px;
-      height: 36px;
-      border: 1px solid rgba(122, 62, 62, .16);
-      border-radius: 50%;
-      background: rgba(122, 62, 62, .06);
-      color: var(--wine);
-      cursor: pointer;
-      font-size: 1rem;
-      font-weight: bold;
-      transition: .2s ease;
-    }
-
-    .music-btn:hover {
-      background: rgba(122, 62, 62, .12);
-      transform: scale(1.05);
-    }
-
-    .music-btn.main {
-      background: var(--wine);
-      color: #fff;
-      box-shadow: 0 8px 20px rgba(122, 62, 62, .24);
-    }
-
-    .music-btn.main:hover {
-      transform: scale(1.08);
-      box-shadow: 0 12px 28px rgba(122, 62, 62, .32);
-    }
-
-    .music-progress {
-      width: 100%;
-      margin-top: 12px;
-      cursor: pointer;
-      accent-color: var(--wine);
-    }
-
-    .music-hint {
-      margin: 8px 0 0;
-      color: var(--muted);
-      font-size: .75rem;
-      line-height: 1.4;
-    }
-
-    @media (max-width: 680px) {
-      .music-player {
-        right: 10px;
-        bottom: 10px;
-        width: calc(100vw - 20px);
-      }
-    }
-
     @media (max-width: 980px) {
       .hero,
       .story-card,
@@ -841,21 +726,6 @@
     <a href="#presentes">Presentes</a>
     <a href="#data">Data</a>
   </nav>
-
-  <div class="music-player" aria-label="Trilha sonora do casamento">
-    <div class="music-top">
-      <div class="music-disc" id="musicDisc">♪</div>
-      <div class="music-info"><small>Nossa trilha sonora</small><strong id="musicTitle">Canção do nosso casamento</strong></div>
-      <div class="music-controls">
-        <button class="music-btn" id="musicPrev" type="button" aria-label="Música anterior">‹</button>
-        <button class="music-btn main" id="musicToggle" type="button" aria-label="Tocar música">▶</button>
-        <button class="music-btn" id="musicNext" type="button" aria-label="Próxima música">›</button>
-      </div>
-    </div>
-    <input class="music-progress" id="musicProgress" type="range" min="0" max="100" value="0" aria-label="Progresso da música">
-    <p class="music-hint" id="musicHint">A música tenta começar automaticamente. Se o navegador bloquear o som, toque em ▶ uma vez.</p>
-    <audio id="weddingAudio" preload="auto"></audio>
-  </div>
 
   <main id="inicio" class="hero">
     <div>
@@ -1110,7 +980,5 @@
     <strong>Mariana & Igor</strong>
     <p>24 de outubro de 2026 | Campinas, SP</p>
   </footer>
-
-  <script src="https://raw.githubusercontent.com/igorsmg/casamento/main/music-player.js"></script>
 </body>
 </html>
