@@ -10,15 +10,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --cream: #fff9f0;
-      --paper: #fffdf8;
-      --sand: #eadcc8;
-      --rose: #d49a8d;
-      --wine: #7a3e3e;
-      --sage: #6f8068;
-      --ink: #2d2622;
-      --muted: #786c64;
-      --shadow: 0 22px 70px rgba(79, 54, 40, .18);
+      --cream: #fafbf6;
+      --paper: #fffffc;
+      --sand: #dce1d0;
+      --rose: #9aad7c;
+      --wine: #3c4825;
+      --sage: #64744a;
+      --ink: #29341f;
+      --muted: #5e6755;
+      --shadow: 0 22px 70px rgba(42, 53, 31, .18);
       --radius: 28px;
     }
 
@@ -34,8 +34,8 @@
       margin: 0;
       color: var(--ink);
       background:
-        radial-gradient(circle at top left, rgba(212, 154, 141, .22), transparent 34rem),
-        linear-gradient(135deg, #fffaf2 0%, #f6ecdf 55%, #efe2d0 100%);
+        radial-gradient(circle at top left, rgba(154, 173, 124, .22), transparent 34rem),
+        linear-gradient(135deg, #fbfcf7 0%, #edf0e6 55%, #dce1d0 100%);
       font-family: Montserrat, Arial, sans-serif;
       line-height: 1.6;
     }
@@ -46,8 +46,8 @@
       inset: 0;
       pointer-events: none;
       background-image:
-        linear-gradient(rgba(122, 62, 62, .035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(122, 62, 62, .035) 1px, transparent 1px);
+        linear-gradient(rgba(60, 72, 37, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(60, 72, 37, .035) 1px, transparent 1px);
       background-size: 42px 42px;
       mask-image: linear-gradient(to bottom, rgba(0, 0, 0, .75), transparent 72%);
       z-index: -1;
@@ -74,10 +74,10 @@
       align-items: center;
       width: min(92vw, 980px);
       padding: 10px;
-      border: 1px solid rgba(122, 62, 62, .12);
+      border: 1px solid rgba(60, 72, 37, .12);
       border-radius: 999px;
-      background: rgba(255, 253, 248, .78);
-      box-shadow: 0 12px 40px rgba(73, 47, 34, .12);
+      background: rgba(255, 255, 252, .78);
+      box-shadow: 0 12px 40px rgba(42, 53, 31, .12);
       backdrop-filter: blur(18px);
     }
 
@@ -103,7 +103,7 @@
 
     .nav a:not(.brand):hover {
       color: var(--wine);
-      background: rgba(212, 154, 141, .16);
+      background: rgba(154, 173, 124, .16);
     }
 
     .hero {
@@ -147,8 +147,9 @@
 
     h1 {
       max-width: 680px;
-      font-size: clamp(4rem, 11vw, 9rem);
+      font-size: clamp(2.4rem, 7.6vw, 6.8rem);
       letter-spacing: -.05em;
+      white-space: nowrap;
     }
 
     h2 {
@@ -184,24 +185,24 @@
       border: 1px solid transparent;
       border-radius: 999px;
       background: var(--wine);
-      color: #fffaf4;
+      color: #fff;
       font-size: .86rem;
       font-weight: 800;
       letter-spacing: .08em;
       text-transform: uppercase;
-      box-shadow: 0 14px 30px rgba(122, 62, 62, .24);
+      box-shadow: 0 14px 30px rgba(60, 72, 37, .24);
       transition: .2s ease;
     }
 
     .button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 18px 36px rgba(122, 62, 62, .28);
+      box-shadow: 0 18px 36px rgba(60, 72, 37, .28);
     }
 
     .button.secondary {
       background: transparent;
       color: var(--wine);
-      border-color: rgba(122, 62, 62, .28);
+      border-color: rgba(60, 72, 37, .28);
       box-shadow: none;
     }
 
@@ -215,10 +216,10 @@
       max-width: 100%;
       margin-top: 42px;
       padding: 20px 28px;
-      border: 1px solid rgba(212, 154, 141, .35);
+      border: 1px solid rgba(154, 173, 124, .35);
       border-radius: 24px;
-      background: linear-gradient(120deg, rgba(212, 154, 141, .22), rgba(234, 220, 200, .4) 55%, rgba(111, 128, 104, .16));
-      box-shadow: 0 18px 46px rgba(212, 154, 141, .28), 0 0 0 6px rgba(255, 253, 248, .6);
+      background: linear-gradient(120deg, rgba(154, 173, 124, .22), rgba(220, 225, 208, .4) 55%, rgba(100, 116, 74, .16));
+      box-shadow: 0 18px 46px rgba(154, 173, 124, .28), 0 0 0 6px rgba(255, 255, 252, .6);
       overflow: hidden;
       scroll-margin-top: 120px;
       animation: glow 2.8s ease-in-out infinite;
@@ -226,10 +227,10 @@
 
     @keyframes glow {
       0%, 100% {
-        box-shadow: 0 18px 46px rgba(212, 154, 141, .28), 0 0 0 6px rgba(255, 253, 248, .6);
+        box-shadow: 0 18px 46px rgba(154, 173, 124, .28), 0 0 0 6px rgba(255, 255, 252, .6);
       }
       50% {
-        box-shadow: 0 22px 56px rgba(212, 154, 141, .42), 0 0 0 8px rgba(255, 253, 248, .75);
+        box-shadow: 0 22px 56px rgba(154, 173, 124, .42), 0 0 0 8px rgba(255, 255, 252, .75);
       }
     }
 
@@ -255,7 +256,7 @@
       position: relative;
       overflow: hidden;
       min-height: min(72vh, 720px);
-      border: 14px solid rgba(255, 253, 248, .7);
+      border: 14px solid rgba(255, 255, 252, .7);
       border-radius: 44px;
       background: var(--paper);
       box-shadow: var(--shadow);
@@ -285,8 +286,8 @@
       align-items: center;
       justify-content: center;
       background:
-        radial-gradient(circle at center, rgba(212, 154, 141, .18), transparent 55%),
-        #f7eee3;
+        radial-gradient(circle at center, rgba(154, 173, 124, .18), transparent 55%),
+        #eef1e8;
     }
 
     .slide img {
@@ -301,7 +302,7 @@
       position: absolute;
       inset: auto 0 0;
       height: 34%;
-      background: linear-gradient(to top, rgba(45, 38, 34, .48), transparent);
+      background: linear-gradient(to top, rgba(41, 52, 31, .48), transparent);
       z-index: 2;
       pointer-events: none;
     }
@@ -312,7 +313,7 @@
       right: 26px;
       bottom: 24px;
       z-index: 3;
-      color: #fffaf4;
+      color: #fff;
     }
 
     .photo-caption strong {
@@ -326,7 +327,7 @@
       display: block;
       max-width: 350px;
       margin-top: 8px;
-      color: rgba(255, 250, 244, .82);
+      color: rgba(255, 255, 255, .82);
       font-size: .9rem;
     }
 
@@ -344,14 +345,14 @@
       height: 8px;
       border: 0;
       border-radius: 999px;
-      background: rgba(255, 250, 244, .5);
+      background: rgba(255, 255, 255, .5);
       cursor: pointer;
       transition: .2s ease;
     }
 
     .dot.active {
       width: 28px;
-      background: #fffaf4;
+      background: #fff;
     }
 
     section {
@@ -380,10 +381,10 @@
       gap: clamp(26px, 5vw, 64px);
       align-items: center;
       padding: clamp(22px, 4vw, 46px);
-      border: 1px solid rgba(122, 62, 62, .12);
+      border: 1px solid rgba(60, 72, 37, .12);
       border-radius: var(--radius);
-      background: rgba(255, 253, 248, .76);
-      box-shadow: 0 20px 60px rgba(73, 47, 34, .1);
+      background: rgba(255, 255, 252, .76);
+      box-shadow: 0 20px 60px rgba(42, 53, 31, .1);
       backdrop-filter: blur(14px);
     }
 
@@ -421,7 +422,7 @@
     .timeline div {
       padding: 18px;
       border-radius: 20px;
-      background: rgba(234, 220, 200, .48);
+      background: rgba(220, 225, 208, .48);
     }
 
     .timeline strong {
@@ -445,7 +446,7 @@
       padding: 18px 22px;
       border-left: 4px solid var(--rose);
       border-radius: 18px;
-      background: rgba(255, 253, 248, .72);
+      background: rgba(255, 255, 252, .72);
       color: var(--muted);
     }
 
@@ -462,10 +463,10 @@
     .route-card {
       position: relative;
       padding: 28px;
-      border: 1px solid rgba(122, 62, 62, .12);
+      border: 1px solid rgba(60, 72, 37, .12);
       border-radius: 26px;
-      background: rgba(255, 253, 248, .86);
-      box-shadow: 0 18px 54px rgba(73, 47, 34, .1);
+      background: rgba(255, 255, 252, .86);
+      box-shadow: 0 18px 54px rgba(42, 53, 31, .1);
       overflow: hidden;
     }
 
@@ -477,7 +478,7 @@
       width: 160px;
       height: 160px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(212, 154, 141, .25), transparent 70%);
+      background: radial-gradient(circle, rgba(154, 173, 124, .25), transparent 70%);
     }
 
     .route-top {
@@ -493,7 +494,7 @@
       padding: 6px 14px;
       border-radius: 999px;
       background: var(--wine);
-      color: #fffaf4;
+      color: #fff;
       font-family: "Cormorant Garamond", Georgia, serif;
       font-size: 1.1rem;
       font-weight: 700;
@@ -531,18 +532,18 @@
       padding: 12px 20px;
       border-radius: 999px;
       background: var(--wine);
-      color: #fffaf4;
+      color: #fff;
       font-size: .82rem;
       font-weight: 800;
       letter-spacing: .06em;
       text-transform: uppercase;
-      box-shadow: 0 14px 30px rgba(122, 62, 62, .22);
+      box-shadow: 0 14px 30px rgba(60, 72, 37, .22);
       transition: .2s ease;
     }
 
     .route-link:hover {
       transform: translateY(-2px);
-      box-shadow: 0 18px 36px rgba(122, 62, 62, .26);
+      box-shadow: 0 18px 36px rgba(60, 72, 37, .26);
     }
 
     .route-link-icon {
@@ -560,10 +561,10 @@
       flex-direction: column;
       min-height: 100%;
       padding: 22px;
-      border: 1px solid rgba(122, 62, 62, .12);
+      border: 1px solid rgba(60, 72, 37, .12);
       border-radius: 24px;
-      background: rgba(255, 253, 248, .86);
-      box-shadow: 0 16px 48px rgba(73, 47, 34, .09);
+      background: rgba(255, 255, 252, .86);
+      box-shadow: 0 16px 48px rgba(42, 53, 31, .09);
     }
 
     .gift-card small {
@@ -599,7 +600,7 @@
     .price {
       margin-top: auto;
       padding-top: 18px;
-      border-top: 1px solid rgba(122, 62, 62, .12);
+      border-top: 1px solid rgba(60, 72, 37, .12);
     }
 
     .price strong {
@@ -625,7 +626,7 @@
       margin-top: 16px;
       padding: 12px 16px;
       border-radius: 999px;
-      background: rgba(122, 62, 62, .1);
+      background: rgba(60, 72, 37, .1);
       color: var(--wine);
       font-size: .78rem;
       font-weight: 800;
@@ -636,7 +637,7 @@
 
     .gift-link:hover {
       background: var(--wine);
-      color: #fffaf4;
+      color: #fff;
       transform: translateY(-1px);
     }
 
@@ -733,8 +734,8 @@
       <h1>Mariana & Igor</h1>
       <p class="lead">Do mesmo MBA para uma vida inteira: uma celebração sobre escolhas, encontros improváveis e o amor que decidiu ficar.</p>
       <div class="hero-actions">
-        <a class="button" href="#presentes">Ver lista de presentes</a>
         <a class="button secondary" href="#historia">Nossa história</a>
+        <a class="button" href="#presentes">Ver lista de presentes</a>
       </div>
       <div id="data" class="date-card" aria-label="Data do casamento">
         <strong>24.10.2026</strong>
@@ -791,10 +792,10 @@
         <img src="https://raw.githubusercontent.com/igorsmg/casamento/main/WhatsApp Image 2026-08-23 at 21.43.20.jpeg" alt="Mariana e Igor em destaque">
       </div>
       <div class="story-copy">
-        <p>Mariana procurava um curso para mergulhar mais fundo no universo dos dados. Igor buscava o mesmo impulso: dar um novo passo na carreira e abrir caminho para oportunidades maiores. Sem saber[...]
-        <p>O destino marcou esse encontro em um MBA. No início, eram apenas nomes em uma turma, mensagens compartilhadas, dúvidas, prazos e aprendizados. Até que, em um dia comum, Igor entrou no gr[...]
-        <p>A curiosidade virou conversa. A conversa virou afinidade. E a afinidade, pouco a pouco, encontrou espaço para se transformar em cuidado, parceria e vontade de estar perto. Vieram os primei[...]
-        <p>Hoje, Mariana e Igor celebram a escolha de caminhar juntos. No dia 24 de outubro de 2026, essa história ganha um novo capítulo, cercada pelas pessoas que fizeram parte da jornada e que ag[...]
+        <p>Mariana procurava um curso para mergulhar mais fundo no universo dos dados. Igor buscava o mesmo impulso: dar um novo passo na carreira e abrir caminho para oportunidades maiores. Sem saber, os dois estavam prestes a encontrar muito mais do que uma formação.</p>
+        <p>O destino marcou esse encontro em um MBA. No início, eram apenas nomes em uma turma, mensagens compartilhadas, dúvidas, prazos e aprendizados. Até que, em um dia comum, Igor entrou no grupo da sala e percebeu que Mariana também fazia parte daquela nova jornada.</p>
+        <p>A curiosidade virou conversa. A conversa virou afinidade. E a afinidade, pouco a pouco, encontrou espaço para se transformar em cuidado, parceria e vontade de estar perto. Vieram os primeiros cafés, as risadas, os planos e a certeza tranquila de que havia algo especial ali.</p>
+        <p>Hoje, Mariana e Igor celebram a escolha de caminhar juntos. No dia 24 de outubro de 2026, essa história ganha um novo capítulo, cercada pelas pessoas que fizeram parte da jornada e que agora são convidadas a celebrar este momento com eles.</p>
 
         <div class="timeline" aria-label="Linha do tempo do casal">
           <div><strong>MBA</strong><span>Onde tudo começou</span></div>
