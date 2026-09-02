@@ -855,6 +855,44 @@
      </div>
 
     <div class="gifts-grid">
+      <!-- NOVOS PRESENTES INCREMENTADOS -->
+      <article class="gift-card">
+        <small>Passeio</small>
+        <h3>Subida à Torre Eiffel</h3>
+        <p>Ingressos para o casal subir ao topo e apreciar a vista panorâmica deslumbrante de Paris.</p>
+        <ul>
+          <li>Acesso ao topo da Torre para duas pessoas</li>
+          <li>Um brinde romântico contemplando a cidade</li>
+        </ul>
+        <div class="price"><strong>R$ 507</strong></div>
+        <a class="gift-link" href="https://nubank.com.br/cobrar/auhc/6a81bbd0-22c4-49db-a559-b849fe3e29f3" target="_blank" rel="noopener">Presentear via PIX</a>
+      </article>
+
+      <article class="gift-card">
+        <small>Cultura</small>
+        <h3>Panteão & Quartier Latin</h3>
+        <p>Visita guiada pelo Panteão de Paris e um passeio walking tour pelas charmosas ruas históricas.</p>
+        <ul>
+          <li>Ingressos para o Panteão do casal</li>
+          <li>Café e crepe tradicional no Quartier Latin</li>
+        </ul>
+        <div class="price"><strong>R$ 513</strong></div>
+        <a class="gift-link" href="https://nubank.com.br/cobrar/auhc/6a81bbd0-22c4-49db-a559-b849fe3e29f3" target="_blank" rel="noopener">Presentear via PIX</a>
+      </article>
+
+      <article class="gift-card">
+        <small>Arte & Natureza</small>
+        <h3>Musée de l'Orangerie</h3>
+        <p>Entrada para ver as famosas Ninféias de Monet e passeio nos Jardins das Tulherias.</p>
+        <ul>
+          <li>Ingressos de entrada para duas pessoas</li>
+          <li>Tarde relaxante com picnic nos jardins</li>
+        </ul>
+        <div class="price"><strong>R$ 575</strong></div>
+        <a class="gift-link" href="https://nubank.com.br/cobrar/auhc/6a81bbd0-22c4-49db-a559-b849fe3e29f3" target="_blank" rel="noopener">Presentear via PIX</a>
+      </article>
+
+      <!-- PRESENTES EXISTENTES -->
       <article class="gift-card">
         <small>Museu</small>
         <h3>Louvre para dois</h3>
@@ -1076,16 +1114,6 @@
     // Pausar auto-play em dispositivos móveis quando tocado
     carousel.addEventListener('touchstart', () => {
       clearInterval(autoPlayInterval);
-    });
-
-    carousel.addEventListener('touchend', () => {
-      startAutoPlay();
-    });
-
-    // Navegação por teclado
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') prevSlide();
-      if (e.key === 'ArrowRight') nextSlide();
     });
   </script>
 </body>
