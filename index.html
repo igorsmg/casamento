@@ -1116,5 +1116,31 @@
       clearInterval(autoPlayInterval);
     });
   </script>
+<audio id="bg-music" loop preload="auto">
+    <source src="https://raw.githubusercontent.com/igorsmg/casamento/main/Beirut%20-%20Elephant%20Gun%20(Official%20Video).mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const audio = document.getElementById('bg-music');
+    audio.volume = 0.5;
+
+    function tocar() {
+      audio.play().catch(() => {});
+    }
+
+    // Tenta iniciar ao carregar a página
+    tocar();
+
+    // Se o navegador bloquear o autoplay, inicia no primeiro clique ou scroll
+    window.addEventListener('click', () => {
+      tocar();
+      window.removeEventListener('click', tocar);
+    }, { once: true });
+
+    window.addEventListener('scroll', () => {
+      tocar();
+      window.removeEventListener('scroll', tocar);
+    }, { once: true });
+  </script>
 </body>
 </html>
