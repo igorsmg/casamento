@@ -412,6 +412,60 @@
       font-size: 1.22rem;
     }
 
+
+    .story-video {
+      margin-top: 32px;
+      padding: clamp(10px, 1.5vw, 14px);
+      border: 1px solid rgba(60, 72, 37, .12);
+      border-radius: 28px;
+      background: rgba(255, 255, 252, .76);
+      box-shadow: 0 20px 60px rgba(42, 53, 31, .10);
+      backdrop-filter: blur(14px);
+    }
+
+    .story-video video {
+      display: block;
+      width: 100%;
+      max-height: 720px;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      border-radius: 20px;
+      background: #eef1e8;
+    }
+
+    .story-video-caption {
+      padding: 14px 6px 2px;
+      text-align: center;
+    }
+
+    .story-video-caption strong {
+      display: block;
+      color: var(--wine);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.55rem;
+      line-height: 1;
+    }
+
+    .story-video-caption span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    @media (max-width: 680px) {
+      .story-video {
+        margin-top: 24px;
+        padding: 8px;
+        border-radius: 22px;
+      }
+
+      .story-video video {
+        border-radius: 16px;
+      }
+    }
+
+
     .timeline {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -788,16 +842,29 @@
     </div>
 
     <article class="story-card">
-      <div class="story-image">
-        <img src="https://raw.githubusercontent.com/igorsmg/casamento/main/WhatsApp Image 2026-08-23 at 21.43.20.jpeg" alt="Mariana e Igor em destaque">
-      </div>
+        <div class="story-video">
+          <video
+            controls
+            playsinline
+            preload="metadata"
+            poster="https://raw.githubusercontent.com/igorsmg/casamento/main/WhatsApp%20Image%202026-08-23%20at%2021.43.20.jpeg"
+            aria-label="Vídeo contando a história de Mariana e Igor">
+            <source src="https://igorsmg.github.io/casamento/Quadrinhos.mp4" type="video/mp4">
+            Seu navegador não suporta a reprodução de vídeo.
+          </video>
+          <div class="story-video-caption">
+            <strong>Um capítulo contado em imagens</strong>
+            <span>Assista à nossa história antes de continuar a jornada.</span>
+          </div>
+        </div>
+
       <div class="story-copy">
         <p>Mariana procurava um curso para mergulhar mais fundo no universo dos dados. Igor buscava o mesmo impulso: dar um novo passo na carreira e abrir caminho para oportunidades maiores. Sem saber, os dois estavam prestes a encontrar muito mais do que uma formação.</p>
         <p>O destino marcou esse encontro em um MBA. No início, eram apenas nomes em uma turma, mensagens compartilhadas, dúvidas, prazos e aprendizados. Até que, em um dia comum, Igor entrou no grupo da sala e percebeu que Mariana também fazia parte daquela nova jornada.</p>
         <p>A curiosidade virou conversa. A conversa virou afinidade. E a afinidade, pouco a pouco, encontrou espaço para se transformar em cuidado, parceria e vontade de estar perto. Vieram os primeiros cafés, as risadas, os planos e a certeza tranquila de que havia algo especial ali.</p>
         <p>Hoje, Mariana e Igor celebram a escolha de caminhar juntos. No dia 24 de outubro de 2026, essa história ganha um novo capítulo, cercada pelas pessoas que fizeram parte da jornada e que agora são convidadas a celebrar este momento com eles.</p>
 
-        <div class="timeline" aria-label="Linha do tempo do casal">
+         <div class="timeline" aria-label="Linha do tempo do casal">
           <div><strong>MBA</strong><span>Onde tudo começou</span></div>
           <div><strong>019</strong><span>O detalhe que aproximou</span></div>
           <div><strong>Famílias</strong><span>Laços que cresceram</span></div>
